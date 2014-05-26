@@ -1,0 +1,50 @@
+---
+layout: 'default'
+title: 'Home'
+---
+
+<!-- Primary marketing message or call to action -->
+
+
+<div class="container">
+	<!-- Example row of columns -->
+	<div class="row" class="text-center">
+		<div class="col-xs-12">
+			<h2>Who I am & What I do</h2>
+			<p>DocPad takes that good ol' simple approach of writing files and wraps it with the best modern innovations, providing an awesome intuitive, liberating and empowering solution for HTML5 web development.</p>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<h2>Published Work</h2>
+			</div>
+
+			<% for document in @getCollection('pages').toJSON(): %>
+			<div class="col-sm-6 col-md-4">
+				<a href="<%= document.url %>">
+					<div class="thumbnail">
+						<div class="caption">
+							<h3><%= document.title %></h3>
+						</div>
+						<img src="http://placekitten.com/400/500" alt="...">
+					</div>
+				</a>
+			</div>
+			<% end %>
+		</div>
+		<div class="row">
+			<h2>Experiments</h2>
+			<% for document in @getCollection('posts').toJSON(): %>
+			<div class="col-sm-6 col-md-4">
+				<a href="<%= document.url %>">
+					<div class="thumbnail">
+						<div class="caption">
+							<h3><%= document.title %></h3>
+						</div>
+						<img src="http://placekitten.com/440/500" alt="...">
+					</div>
+				</a>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
